@@ -129,7 +129,7 @@ Then you can build it:
 `pubsite_prod_rev_DEVACC`
 
 
-#### How to authenticate on ElasticSearch
+### How to authenticate on ElasticSearch
 
 You can authenticate on a generic ElasticSearch cluster this way:
 
