@@ -22,12 +22,12 @@ Given a time range (with month granularity), this tool:
 
 This tool needs the credentials to read your Android apps analytics from csv files stored on Google Cloud Storage (Google Play automatically stores them for you, so you already have them). The [credentials setup](https://support.google.com/googleplay/android-developer/answer/6135870?hl=en) is a bit annoying but can be summarized like follow.
 
-#### Enable the Cloud Storage JSON API
+### Enable the Cloud Storage JSON API
 
 1. Open [https://console.developers.google.com/apis/dashboard](https://console.developers.google.com/apis/dashboard)
 2. Ensure **Google Cloud Storage JSON API** is enabled
 
-#### Create a Service account key
+### Create a Service account key
 
 1. Open [https://console.developers.google.com/apis/credentials](https://console.developers.google.com/apis/credentials)
 2. Select **Create credentials** and then **Service account key** (no permissions are required)
@@ -38,7 +38,7 @@ Notes:
 - The service has an email associated: keep track of it, since you will use it during the next step
 - You have downloaded the service account credentials json file: pick `client_email` and `private_key` from it, since it will be required to authenticate the importer
 
-#### Add the service account on your Play Console
+### Add the service account on your Play Console
 
 1. Open [https://play.google.com/apps/publish/](https://play.google.com/apps/publish/) and login with the owner account of the Android application for which you wanna import the analytics
 2. Select to **Settings** > **User accounts** > **Invite new user**
@@ -118,7 +118,7 @@ GOOGLE_PRIVATE_KEY="SERVICE-KEY" node import.js \
 ```
 
 
-#### How to get an Android app analytics storage bucket
+### How to get an Android app analytics storage bucket
 
 Your Google Cloud Storage bucket ID is listed near the bottom of your Reports pages.
 
