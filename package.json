@@ -1,6 +1,6 @@
 {
   "name": "elasticsearch-playstore",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Google Play Store App Analytics importer for ElasticSearch",
   "main": "src/importer.js",
   "author": "Marco Pracucci <marco.pracucci@spreaker.com>",
