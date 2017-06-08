@@ -60,7 +60,7 @@ Have you survived the setup? Cool! Now, it's time to run it. You can pass all se
 ```
 $ node import.js --help
 
-  Google Play Store App Analytics importer for ElasticSearch
+Google Play Store App Analytics importer for ElasticSearch
 
   Usage:
       node import.js [options]
@@ -73,6 +73,9 @@ $ node import.js --help
                                   encouraged to use the environment variable alternative)
       --elasticsearch-host HOST   ElasticSearch cluster host URL
       --elasticsearch-index NAME  ElasticSearch index name (defaults to "googleplaystore")
+      --elasticsearch-http-auth AUTH
+                                  ElasticSearch HTTP Basic Auth with username and password separated by a colon
+                                  (eg. user:pass)
       --elasticsearch-aws-region  The AWS region (ie. "eu-west-1") if you're connecting to an AWS managed cluster
       --elasticsearch-aws-access-key-id ID
                                   The AWS access id if you're connecting to an AWS managed cluster
@@ -101,12 +104,15 @@ $ node import.js --help
       GOOGLE_PRIVATE_KEY
       ELASTICSEARCH_HOST
       ELASTICSEARCH_INDEX
+      ELASTICSEARCH_HTTP_AUTH
       ELASTICSEARCH_AWS_REGION
       ELASTICSEARCH_AWS_ACCESS_KEY_ID
       ELASTICSEARCH_AWS_SECRET_ACCESS_KEY
       APP_NAME
       APP_PACKAGE
       APP_BUCKET
+      SYNC_START_MONTH
+      SYNC_END_MONTH
       LOG_LEVEL
       LOG_FORMAT
 ```

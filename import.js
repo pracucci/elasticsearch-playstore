@@ -26,6 +26,9 @@ const cli = meow(`
                                     encouraged to use the environment variable alternative)
         --elasticsearch-host HOST   ElasticSearch cluster host URL
         --elasticsearch-index NAME  ElasticSearch index name (defaults to "googleplaystore")
+        --elasticsearch-http-auth AUTH
+                                    ElasticSearch HTTP Basic Auth with username and password separated by a colon
+                                    (eg. user:pass)
         --elasticsearch-aws-region  The AWS region (ie. "eu-west-1") if you're connecting to an AWS managed cluster
         --elasticsearch-aws-access-key-id ID
                                     The AWS access id if you're connecting to an AWS managed cluster
@@ -54,12 +57,15 @@ const cli = meow(`
         GOOGLE_PRIVATE_KEY
         ELASTICSEARCH_HOST
         ELASTICSEARCH_INDEX
+        ELASTICSEARCH_HTTP_AUTH
         ELASTICSEARCH_AWS_REGION
         ELASTICSEARCH_AWS_ACCESS_KEY_ID
         ELASTICSEARCH_AWS_SECRET_ACCESS_KEY
         APP_NAME
         APP_PACKAGE
         APP_BUCKET
+        SYNC_START_MONTH
+        SYNC_END_MONTH
         LOG_LEVEL
         LOG_FORMAT
 `, {
@@ -67,6 +73,7 @@ const cli = meow(`
         "google-client-email",
         "google-private-key",
         "elasticsearch-host",
+        "elasticsearch-http-auth",
         "elasticsearch-index",
         "elasticsearch-aws-region",
         "elasticsearch-aws-access-key-id",
@@ -83,6 +90,7 @@ const cli = meow(`
     alias:   { "v": "verbose" },
     default: {
         "elasticsearch-host":                  process.env.ELASTICSEARCH_HOST,
+        "elasticsearch-http-auth":             process.env.ELASTICSEARCH_HTTP_AUTH,
         "elasticsearch-index":                 process.env.ELASTICSEARCH_INDEX || "googleplaystore",
         "elasticsearch-aws-region":            process.env.ELASTICSEARCH_AWS_REGION,
         "elasticsearch-aws-access-key-id":     process.env.ELASTICSEARCH_AWS_ACCESS_KEY_ID,
@@ -92,7 +100,7 @@ const cli = meow(`
         "app-name":                            process.env.APP_NAME ? process.env.APP_NAME.split(",") : undefined,
         "app-package":                         process.env.APP_PACKAGE ? process.env.APP_PACKAGE.split(",") : undefined,
         "app-bucket":                          process.env.APP_BUCKET ? process.env.APP_BUCKET.split(",") : undefined,
-        "sync-start-month":                    process.env.SYNC_START_MONTH || utils.formatMonth(new Date((new Date().getTime()) - (365 * 24 * 60 * 60 * 1000))),
+        "sync-start-month":                    process.env.SYNC_START_MONTH || utils.formatMonth(new Date((new Date().getTime()) - (32 * 24 * 60 * 60 * 1000))),
         "sync-end-month":                      process.env.SYNC_END_MONTH || utils.formatMonth(new Date()),
         "log-level":                           process.env.LOG_LEVEL || "info",
         "log-format":                          process.env.LOG_FORMAT || "human",

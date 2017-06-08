@@ -20,7 +20,8 @@ const createClientFromConfig = (config) => {
         });
     } else {
         return elasticsearch.Client({
-            host: config.elasticsearchHost
+            host:     config.elasticsearchHost,
+            httpAuth: config.elasticsearchHttpAuth
         });
     }
 };
