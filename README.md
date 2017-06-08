@@ -10,6 +10,13 @@ Currently the following analytics are imported, but extending it to import more 
 - Daily average ratings
 
 
+## Installation
+
+```
+npm install elasticsearch-playstore
+``` 
+
+
 ## How it works
 
 Given a time range (with month granularity), this tool:

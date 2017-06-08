@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const async         = require("async");
 const elasticsearch = require("./src/elasticsearch");
 const filter        = require("lodash").filter;
