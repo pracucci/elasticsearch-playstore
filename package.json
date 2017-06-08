@@ -5,6 +5,9 @@
   "main": "src/importer.js",
   "author": "Marco Pracucci <marco.pracucci@spreaker.com>",
   "license": "MIT",
+  "bin" : {
+    "elasticsearch-playstore-import" : "./import.js"
+  },
   "dependencies": {
     "async": "^2.3.0",
     "elasticsearch": "^13.0.0-rc2",
