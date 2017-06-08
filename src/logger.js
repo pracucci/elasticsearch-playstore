@@ -5,7 +5,8 @@ let logger = {};
 const initLoggerFromConfig = (config) => {
     let instance = pino({
         level:       config.logLevel,
-        prettyPrint: config.logFormat !== "json"
+        prettyPrint: config.logFormat !== "json",
+        messageKey:  "message"
     });
 
     logger.debug = instance.debug.bind(instance);
