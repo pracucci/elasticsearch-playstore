@@ -14,7 +14,7 @@ Currently the following analytics are imported, but extending it to import more 
 
 ```
 npm install elasticsearch-playstore
-``` 
+```
 
 
 ## How it works
